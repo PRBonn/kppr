@@ -1,0 +1,38 @@
+experiment:
+    id: tmp
+
+##Training
+train:
+    n_gpus: 1
+    max_epoch: 30
+    lr: 0.00001
+
+loss:
+    type: entropy
+    params:
+        margin: 0.5
+        alpha: 0.3
+
+##Network
+feature_bank: 15000
+network_architecture: KPPR
+
+point_net:
+    in_dim: 6
+    out_dim: 256
+kpconv:
+    in_channels: 256
+    out_channels: 256
+    radius: 0.05
+    num_layer: 7
+    num_neighbors: 16
+    kernel_size: 3
+    f_dscale: 2
+    precompute_weights: True
+
+aggregation:
+    method: "vlad" # transformer, perceiver, vlad
+    vlad:
+        feature_dim: 256
+        out_dim: 256
+        nr_center: 64

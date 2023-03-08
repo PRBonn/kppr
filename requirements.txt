@@ -1,0 +1,10 @@
+Click==7.0
+diskcache==5.4.0
+pytorch_lightning==1.8.4.post0
+matplotlib==3.1.2
+tqdm==4.64.0
+opt_einsum==3.3.0
+numpy==1.17.4
+torch==1.12.1+cu116
+pickle5==0.0.11
+PyYAML==6.0
