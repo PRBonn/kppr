@@ -18,25 +18,30 @@ All the following commands should be run in `kppr/`
 ### Testing
 
 - Test the model by running: `python test.py --checkpoint {PATH/TO/CHECKPOINT.ckpt} --dataset {DATASET} --base_dir {PATH/TO/DATA}`, where `{DATASET}` is e.g. `oxford`
-- The output will be saved in the same folder of the checkpoint
+- The output will be saved in the same folder as the checkpoint
 - All the results can be visualized with: `python scripts/vis_results.py`
 - The numbers of the paper are in `experiments/kppr/.../oxford_evaluation_query.txt`
-- The pretrained model can be downloaded here [here](https://www.ipb.uni-bonn.de/html/projects/retriever/perceiver_pn_epoch=119_val_top_1_acc=0.97.ckpt) and should be placed into `experiments/perceiver_pn/default/version_15/checkpoints/`.
+- The pre-trained model can be downloaded [here](https://www.ipb.uni-bonn.de/html/projects/kppr/kppr.ckpt) and should be placed into `experiments/kppr/lightning_logs/version_0/`.
 
 ## Data
 
-- The precompressed point cloud maps can be downloaded [here](https://www.ipb.uni-bonn.de/html/projects/retriever/oxford_compressed.zip).
-- For the uncompressed point clouds, I refer to the [PointNetVLAD](https://github.com/mikacuy/pointnetvlad).
+- The pre-compressed point cloud maps can be downloaded [here](https://www.ipb.uni-bonn.de/html/projects/retriever/oxford_compressed.zip) and should be extracted to `data/` (or simply put a symbolic link).
+- For the uncompressed point clouds, I refer to [PointNetVLAD](https://github.com/mikacuy/pointnetvlad).
 
 ## Citation
 
 If you use this library for any academic work, please cite the original paper.
 
 ```bibtex
-@inproceedings{wiesmann2022icra,
-author = {L. Wiesmann and R. Marcuzzi and C. Stachniss and J. Behley},
-title = {{Retriever: Point Cloud Retrieval in Compressed 3D Maps}},
-booktitle = {Proc.~of the IEEE Intl.~Conf.~on Robotics \& Automation (ICRA)},
-year = 2022,
+@article{wiesmann2023ral,
+author = {L. Wiesmann and L. Nunes and J. Behley and C. Stachniss},
+title = {{KPPR: Exploiting Momentum Contrast for Point Cloud-Based Place Recognition}},
+journal = ral,
+volume = {8},
+number = {2},
+pages = {592-599},
+year = 2023,
+issn = {2377-3766},
+doi = {10.1109/LRA.2022.3228174},
 }
 ```
